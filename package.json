@@ -1,0 +1,24 @@
+{
+  "name": "task1",
+  "version": "1.0.0",
+  "description": "First Task in the Nodejs Africa Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osumgbachiamaka/Task1-Nodejs-Africa-.git"
+  },
+  "author": "Osumgba Chiamaka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osumgbachiamaka/Task1-Nodejs-Africa-/issues"
+  },
+  "homepage": "https://github.com/osumgbachiamaka/Task1-Nodejs-Africa-#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}
