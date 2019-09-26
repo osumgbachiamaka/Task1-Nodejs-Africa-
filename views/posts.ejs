@@ -1,0 +1,63 @@
+<% include partials/header %>
+
+<!--Design your page here -->
+
+<section id="main-post">
+        <div class="container">
+
+            <div class="timeline">
+                <%  allPosts.forEach(function(post){ %>
+                    <div class="post-box">
+                        <h4>Title: <span class="brandname-span"><%= post.title%></span></h4>
+                        By <%=post.userId%> (<%=post.id%>)
+                        <p><%= post.body%></p>
+                        Comment - <%= post.comment%>
+                        <a href="/post-<%=post.userId%>-<%=post.id%>">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Comment
+                          </button>
+                        </a>
+
+                        <!--working on post like-->
+                        <button class="edit like" onclick="actOnPost(event);"
+                        data-post-id="<%=post._id %>">Like
+                </button>
+                <span id="likes-count-<%=post._id %>"><%=post.likes_count %></span>
+
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+
+        
+    </section>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://js.pusher.com/4.1/pusher.min.js"></script> -->
+    <!-- <script src="/js/pusher.js"></script>
+    <script>
+        var updatePostStats = {
+            Like: function (postId) {
+                document.querySelector('#likes-count-' + postId).textContent++;
+            },
+            Unlike: function(postId) {
+                document.querySelector('#likes-count-' + postId).textContent--;
+            }
+        };
+
+        var toggleButtonText = {
+            Like: function(button) {
+                button.textContent = "Unlike";
+            },
+            Unlike: function(button) {
+                button.textContent = "Like";
+            }
+        };
+
+        var actOnPost = function (event) {
+            var postId = event.target.dataset.postId;
+            var action = event.target.textContent.trim();
+            toggleButtonText[action](event.target);
+            updatePostStats[action](postId);
+            axios.post('/posts/' + postId + '/act', { action: action });
+        };
+    </script> -->
