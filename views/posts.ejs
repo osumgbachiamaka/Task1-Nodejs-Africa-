@@ -7,10 +7,12 @@
 
             <div class="timeline">
                 <%  allPosts.forEach(function(post){ %>
-                    <div class="post-box">
-                        <h4>Title: <span class="brandname-span"><%= post.title%></span></h4>
-                        By <%=post.userId%> (<%=post.id%>)
-                        <p><%= post.body%></p>
+                    <div class="card-columns" style="margin: 0 auto; width: 80%; ">
+                    <div class="card" style="display: inline-block; width: 100%; padding: 10px; margin: 5px 0; box-shadow: 0 1px 5px rgba(0,0,0,.3);">
+                        <div class="card-body">
+                        <h4 class="card-title">Title: <span class="brandname-span"><%= post.title%></span></h4>
+                        <span class="card-subtitle mb-2 text-muted">By <%=post.userId%> (<%=post.id%>)</span> 
+                        <p class="card-text"><%= post.body%></p>
                         Comment - <%= post.comment%>
                         <a href="/post-<%=post.userId%>-<%=post.id%>">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -24,6 +26,8 @@
                 </button>
                 <span id="likes-count-<%=post._id %>"><%=post.likes_count %></span>
 
+                        </div>
+                    </div>
                     </div>
                 <% }) %>
             </div>
